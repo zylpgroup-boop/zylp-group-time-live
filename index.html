@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zylp Group Time Clock</title>
+
+<style>
+body{
+    margin:0;
+    padding:20px;
+    background:#020617;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#fff;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+    color:#38bdf8;
+    letter-spacing:2px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    gap:18px;
+    max-width:1400px;
+    margin:auto;
+}
+
+.clock{
+    background:#0f172a;
+    padding:18px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 0 12px rgba(56,189,248,.25);
+}
+
+.city{
+    font-size:18px;
+    margin-bottom:8px;
+    color:#e5e7eb;
+}
+
+.time{
+    font-size:28px;
+    font-weight:bold;
+    color:#22d3ee;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🌐 Zylp Group Time Clock</h1>
+
+<div class="grid">
+
+<div class="clock"><div class="city">India</div><div class="time" id="india"></div></div>
+<div class="clock"><div class="city">Bangladesh</div><div class="time" id="bd"></div></div>
+<div class="clock"><div class="city">Pakistan</div><div class="time" id="pk"></div></div>
+<div class="clock"><div class="city">Nepal</div><div class="time" id="nepal"></div></div>
+
+<div class="clock"><div class="city">USA (New York)</div><div class="time" id="usa"></div></div>
+<div class="clock"><div class="city">Canada</div><div class="time" id="canada"></div></div>
+<div class="clock"><div class="city">Mexico</div><div class="time" id="mexico"></div></div>
+
+<div class="clock"><div class="city">UK (London)</div><div class="time" id="london"></div></div>
+<div class="clock"><div class="city">France</div><div class="time" id="france"></div></div>
+<div class="clock"><div class="city">Germany</div><div class="time" id="germany"></div></div>
+<div class="clock"><div class="city">Italy</div><div class="time" id="italy"></div></div>
+
+<div class="clock"><div class="city">Russia</div><div class="time" id="russia"></div></div>
+<div class="clock"><div class="city">Turkey</div><div class="time" id="turkey"></div></div>
+
+<div class="clock"><div class="city">Dubai</div><div class="time" id="dubai"></div></div>
+<div class="clock"><div class="city">Saudi Arabia</div><div class="time" id="saudi"></div></div>
+
+<div class="clock"><div class="city">China</div><div class="time" id="china"></div></div>
+<div class="clock"><div class="city">Japan</div><div class="time" id="japan"></div></div>
+<div class="clock"><div class="city">South Korea</div><div class="time" id="korea"></div></div>
+
+<div class="clock"><div class="city">Singapore</div><div class="time" id="singapore"></div></div>
+<div class="clock"><div class="city">Malaysia</div><div class="time" id="malaysia"></div></div>
+<div class="clock"><div class="city">Thailand</div><div class="time" id="thailand"></div></div>
+
+<div class="clock"><div class="city">Australia</div><div class="time" id="australia"></div></div>
+<div class="clock"><div class="city">New Zealand</div><div class="time" id="nz"></div></div>
+
+<div class="clock"><div class="city">South Africa</div><div class="time" id="africa"></div></div>
+
+</div>
+
+<script>
+function t(id, zone){
+    document.getElementById(id).innerHTML =
+    new Date().toLocaleTimeString("en-GB",{
+        timeZone: zone,
+        hour:"2-digit",
+        minute:"2-digit",
+        second:"2-digit"
+    });
+}
+
+function update(){
+    t("india","Asia/Kolkata");
+    t("bd","Asia/Dhaka");
+    t("pk","Asia/Karachi");
+    t("nepal","Asia/Kathmandu");
+
+    t("usa","America/New_York");
+    t("canada","America/Toronto");
+    t("mexico","America/Mexico_City");
+
+    t("london","Europe/London");
+    t("france","Europe/Paris");
+    t("germany","Europe/Berlin");
+    t("italy","Europe/Rome");
+
+    t("russia","Europe/Moscow");
+    t("turkey","Europe/Istanbul");
+
+    t("dubai","Asia/Dubai");
+    t("saudi","Asia/Riyadh");
+
+    t("china","Asia/Shanghai");
+    t("japan","Asia/Tokyo");
+    t("korea","Asia/Seoul");
+
+    t("singapore","Asia/Singapore");
+    t("malaysia","Asia/Kuala_Lumpur");
+    t("thailand","Asia/Bangkok");
+
+    t("australia","Australia/Sydney");
+    t("nz","Pacific/Auckland");
+
+    t("africa","Africa/Johannesburg");
+}
+
+setInterval(update,1000);
+update();
+</script>
+
+</body>
+</html>HTML
